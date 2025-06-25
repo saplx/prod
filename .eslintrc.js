@@ -5,7 +5,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["plugin:react/recommended", "airbnb"],
+  extends: [
+    "plugin:react/recommended", 
+    "airbnb",
+    'plugin:i18next/recommended',
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -35,8 +39,23 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "no-underscore-dangle": "off",
     "max-len": ['error', { "ignoreComments": true, code: 100 }],
+    "i18next/no-literal-string": [
+      'error', 
+      {
+        markupOnly: true, 
+        ignoreAttribute: ['data-testid']
+      }
+    ]
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        "i18next/no-literal-string": off,
+      }
+    }
+  ]
 };
