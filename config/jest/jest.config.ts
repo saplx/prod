@@ -3,10 +3,10 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest';
+import type { Config } from '@jest/types';
 import path from 'path';
 
-const config: Config = {
+const config: Config.InitialOptions = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
