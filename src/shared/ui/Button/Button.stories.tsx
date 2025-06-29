@@ -1,8 +1,8 @@
-// Button.stories.tsx
+// eslint-disable-next-line storybook/no-renderer-packages
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Button, ThemeButton } from './Button';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Button, ThemeButton } from './Button';
 
 export default {
     title: 'shared/Button',
@@ -34,4 +34,4 @@ OutlineDark.args = {
     children: 'Text',
     theme: ThemeButton.OUTLINE,
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
