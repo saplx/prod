@@ -28,6 +28,8 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'storybook',
+        'react-hooks',
+
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -56,15 +58,20 @@ module.exports = {
                 ignoreAttribute: ['data-testid', 'to'],
             },
         ],
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,
     },
     overrides: [
         {
-            files: ['**/src/**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}', '**/*.spec.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
+                'max-len': 'off',
             },
         },
     ],
