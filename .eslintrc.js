@@ -63,6 +63,9 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
+        'react/prop-types': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'react/no-unused-prop-types': 'off',
     },
     globals: {
         __IS_DEV__: true,
