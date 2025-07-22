@@ -50,7 +50,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'i18next/no-literal-string': [
             'error',
             {
@@ -66,6 +66,7 @@ module.exports = {
         'react/prop-types': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'react/no-unused-prop-types': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,

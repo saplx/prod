@@ -14,7 +14,7 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string;
-    onChange: (value: string) => void;
+    onChange?: (value: string) => void;
     autofocus?: boolean;
     label?: string;
 }
@@ -39,13 +39,13 @@ export const Input = memo(forwardRef<HTMLInputElement, InputProps>(({
         }
     }, [autofocus]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => onChange?.(e.target.value);
 
     return (
         <div
             className={classNames(
                 cls.InputWrapper,
-                { [cls.filled]: value.length > 0 },
+                { [cls.filled]: (value ?? '').length > 0 },
                 [className],
             )}
         >
